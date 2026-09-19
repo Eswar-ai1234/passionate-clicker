@@ -1,8 +1,9 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import "./Pages.css";
 
-const API_URL = import.meta.env.VITE_API_URL;
+const API_URL =
+  import.meta.env.VITE_API_URL ||
+  "https://passionate-clicker.onrender.com";
 
 function AdminLogin() {
   const navigate = useNavigate();
@@ -26,9 +27,7 @@ function AdminLogin() {
     try {
       setLoading(true);
 
-      const response = await fetch(
-        `${API_URL}/auth/login`,
-        {
+      const response = await fetch( `${API_URL}/auth/login`, {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
