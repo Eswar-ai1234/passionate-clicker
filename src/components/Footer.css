@@ -1,0 +1,194 @@
+/* =====================================================
+   FOOTER
+===================================================== */
+
+.site-footer {
+  background: #11100f;
+  border-top: 1px solid var(--border);
+}
+
+
+/* =====================================================
+   MAIN FOOTER
+===================================================== */
+
+.footer-main {
+  padding: 75px 7% 65px;
+
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr;
+  gap: 80px;
+
+  border-bottom: 1px solid var(--border);
+}
+
+
+/* =====================================================
+   BRAND
+===================================================== */
+
+.footer-brand {
+  max-width: 430px;
+}
+
+.footer-eyebrow,
+.footer-heading {
+  margin-bottom: 20px;
+
+  color: var(--accent);
+
+  font-size: 9px;
+  font-weight: 600;
+
+  letter-spacing: 2.5px;
+}
+
+.footer-logo {
+  display: inline-block;
+
+  font-family: "Cormorant Garamond", serif;
+
+  font-size: 50px;
+  line-height: 0.82;
+
+  font-weight: 400;
+  letter-spacing: 2px;
+}
+
+.footer-logo span {
+  color: var(--accent);
+  font-style: italic;
+}
+
+.footer-description {
+  max-width: 350px;
+
+  margin-top: 28px;
+
+  color: var(--muted);
+
+  font-size: 12px;
+  line-height: 1.8;
+}
+
+
+/* =====================================================
+   CONTACT
+===================================================== */
+
+.footer-contact,
+.footer-action {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.footer-contact a {
+  margin-bottom: 14px;
+
+  color: var(--muted);
+
+  font-size: 11px;
+
+  transition: color 0.3s ease;
+}
+
+.footer-contact a:hover {
+  color: var(--accent);
+}
+
+
+/* =====================================================
+   CTA
+===================================================== */
+
+.footer-book-btn {
+  min-height: 50px;
+
+  padding: 0 25px;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  border: 1px solid var(--accent);
+
+  color: var(--accent);
+
+  font-size: 10px;
+  font-weight: 600;
+
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+
+  transition: 0.3s ease;
+}
+
+.footer-book-btn:hover {
+  background: var(--accent);
+  color: #171411;
+}
+
+
+/* =====================================================
+   BOTTOM
+===================================================== */
+
+.footer-bottom {
+  min-height: 70px;
+
+  padding: 20px 7%;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 20px;
+}
+
+.footer-bottom p {
+  color: #77716a;
+
+  font-size: 9px;
+
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+
+/* =====================================================
+   MOBILE
+===================================================== */
+
+@media (max-width: 750px) {
+
+  .footer-main {
+    padding: 60px 25px;
+
+    grid-template-columns: 1fr;
+
+    gap: 45px;
+  }
+
+  .footer-logo {
+    font-size: 45px;
+  }
+
+  .footer-description {
+    margin-top: 22px;
+  }
+
+  .footer-contact,
+  .footer-action {
+    padding-top: 30px;
+
+    border-top: 1px solid var(--border);
+  }
+
+  .footer-bottom {
+    padding: 22px 25px;
+
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}

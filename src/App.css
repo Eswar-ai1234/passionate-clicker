@@ -1,0 +1,661 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Manrope:wght@300;400;500;600;700&display=swap');
+
+
+/* =====================================================
+   ROOT
+===================================================== */
+
+:root {
+  --background: #151311;
+  --surface: #1d1a17;
+  --cream: #f3eee5;
+  --muted: #aaa39a;
+  --accent: #d6b98c;
+  --border: rgba(243, 238, 229, 0.15);
+}
+
+
+/* =====================================================
+   RESET
+===================================================== */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background: var(--background);
+  color: var(--cream);
+  font-family: "Manrope", sans-serif;
+  overflow-x: hidden;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button,
+input,
+textarea,
+select {
+  font-family: inherit;
+}
+
+button {
+  cursor: pointer;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+
+/* =====================================================
+   APP
+===================================================== */
+
+.app {
+  min-height: 100vh;
+  background: var(--background);
+}
+
+
+/* =====================================================
+   HERO
+===================================================== */
+
+.hero {
+  min-height: 100vh;
+
+  padding: 90px 8% 70px;
+
+  display: flex;
+  align-items: center;
+
+  position: relative;
+  overflow: hidden;
+
+  border-bottom: 1px solid var(--border);
+
+  background:
+    linear-gradient(
+      90deg,
+      rgba(21, 19, 17, 0.98) 0%,
+      rgba(21, 19, 17, 0.90) 38%,
+      rgba(21, 19, 17, 0.55) 70%,
+      rgba(21, 19, 17, 0.25) 100%
+    ),
+    url("https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=2200&q=90")
+    center center / cover no-repeat;
+}
+
+.hero-content {
+  width: 100%;
+  max-width: 900px;
+}
+
+.hero-eyebrow {
+  margin-bottom: 28px;
+
+  color: var(--accent);
+
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 3px;
+}
+
+.hero h1 {
+  margin: 0;
+
+  font-family: "Cormorant Garamond", serif;
+
+  font-size: clamp(70px, 9vw, 135px);
+  line-height: 0.84;
+
+  font-weight: 400;
+  letter-spacing: -5px;
+}
+
+.hero h1 span {
+  color: var(--accent);
+  font-style: italic;
+}
+
+.hero-description {
+  max-width: 500px;
+
+  margin-top: 40px;
+
+  color: var(--muted);
+
+  font-size: 14px;
+  line-height: 1.9;
+}
+
+.hero-actions {
+  display: flex;
+  align-items: center;
+
+  gap: 15px;
+
+  margin-top: 40px;
+
+  flex-wrap: wrap;
+}
+
+
+/* =====================================================
+   BUTTONS
+===================================================== */
+
+.primary-btn,
+.secondary-btn {
+  min-height: 52px;
+
+  padding: 0 28px;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  border: 1px solid var(--cream);
+
+  font-size: 10px;
+  font-weight: 600;
+
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+
+  transition: 0.3s ease;
+}
+
+.primary-btn {
+  background: var(--cream);
+  color: #171411;
+}
+
+.primary-btn:hover {
+  background: var(--accent);
+  border-color: var(--accent);
+  transform: translateY(-2px);
+}
+
+.secondary-btn {
+  background: transparent;
+  color: var(--cream);
+}
+
+.secondary-btn:hover {
+  background: var(--cream);
+  color: #171411;
+  transform: translateY(-2px);
+}
+
+
+/* =====================================================
+   COMMON
+===================================================== */
+
+.section-label {
+  margin-bottom: 22px;
+
+  color: var(--accent);
+
+  font-size: 10px;
+  font-weight: 600;
+
+  letter-spacing: 2.5px;
+}
+
+.section-top {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+
+  gap: 40px;
+}
+
+.section-top h2,
+.home-intro-content h2,
+.home-cta h2 {
+  font-family: "Cormorant Garamond", serif;
+
+  font-size: clamp(55px, 6vw, 90px);
+
+  line-height: 0.88;
+
+  font-weight: 400;
+
+  letter-spacing: -2.5px;
+}
+
+.section-top h2 span,
+.home-intro-content h2 span,
+.home-cta h2 span {
+  color: var(--accent);
+  font-style: italic;
+}
+
+.text-link {
+  display: inline-block;
+
+  color: var(--accent);
+
+  font-size: 10px;
+  font-weight: 600;
+
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+
+  white-space: nowrap;
+
+  transition: 0.3s ease;
+}
+
+.text-link:hover {
+  color: var(--cream);
+}
+
+
+/* =====================================================
+   HOME INTRO
+===================================================== */
+
+.home-intro {
+  padding: 130px 9%;
+
+  display: grid;
+  grid-template-columns: 0.7fr 1.3fr;
+
+  gap: 80px;
+
+  border-bottom: 1px solid var(--border);
+}
+
+.home-intro-label {
+  padding-top: 5px;
+}
+
+.home-intro-content {
+  max-width: 760px;
+}
+
+.home-intro-content p {
+  max-width: 570px;
+
+  margin-top: 35px;
+
+  color: var(--muted);
+
+  font-size: 14px;
+  line-height: 1.9;
+}
+
+.home-intro-content .text-link {
+  margin-top: 30px;
+}
+
+
+/* =====================================================
+   FEATURED STORIES
+===================================================== */
+
+.featured-section {
+  padding: 140px 8%;
+
+  border-bottom: 1px solid var(--border);
+}
+
+.featured-grid {
+  margin-top: 70px;
+
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+
+  gap: 25px;
+}
+
+.featured-card {
+  min-width: 0;
+}
+
+.featured-image {
+  width: 100%;
+  height: 540px;
+
+  overflow: hidden;
+
+  background: var(--surface);
+}
+
+.featured-image img {
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+
+  filter: saturate(0.8);
+
+  transition:
+    transform 0.8s ease,
+    filter 0.8s ease;
+}
+
+.featured-card:hover .featured-image img {
+  transform: scale(1.05);
+  filter: saturate(1);
+}
+
+.featured-info {
+  padding-top: 22px;
+}
+
+.featured-info span {
+  color: var(--accent);
+
+  font-size: 9px;
+  letter-spacing: 2px;
+}
+
+.featured-info h3 {
+  margin-top: 9px;
+
+  font-family: "Cormorant Garamond", serif;
+
+  font-size: 31px;
+  font-weight: 400;
+}
+
+
+/* =====================================================
+   SERVICES
+===================================================== */
+
+.home-services {
+  padding: 140px 8%;
+
+  border-bottom: 1px solid var(--border);
+}
+
+.home-services-list {
+  margin-top: 65px;
+
+  border-top: 1px solid var(--border);
+}
+
+.home-service-row {
+  min-height: 105px;
+
+  padding: 0 25px;
+
+  display: grid;
+  grid-template-columns: 80px 1fr 40px;
+
+  align-items: center;
+
+  border-bottom: 1px solid var(--border);
+
+  transition:
+    background 0.3s ease,
+    padding 0.3s ease;
+}
+
+.home-service-row:hover {
+  background: var(--surface);
+  padding-left: 35px;
+}
+
+.home-service-row > span {
+  color: var(--accent);
+
+  font-size: 10px;
+  letter-spacing: 2px;
+}
+
+.home-service-row h3 {
+  font-family: "Cormorant Garamond", serif;
+
+  font-size: 30px;
+  font-weight: 400;
+}
+
+.home-service-row b {
+  color: var(--accent);
+
+  font-size: 16px;
+  font-weight: 400;
+
+  text-align: right;
+}
+
+
+/* =====================================================
+   FINAL CTA
+===================================================== */
+
+.home-cta {
+  padding: 170px 25px;
+
+  text-align: center;
+}
+
+.home-cta .section-label {
+  margin-bottom: 28px;
+}
+
+.home-cta h2 {
+  margin-bottom: 45px;
+}
+
+
+/* =====================================================
+   TABLET
+===================================================== */
+
+@media (max-width: 1000px) {
+
+  .hero {
+    padding-left: 7%;
+    padding-right: 7%;
+  }
+
+  .home-intro {
+    padding-left: 7%;
+    padding-right: 7%;
+  }
+
+  .featured-section,
+  .home-services {
+    padding-left: 7%;
+    padding-right: 7%;
+  }
+
+  .featured-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .featured-card:last-child {
+    grid-column: span 2;
+  }
+
+}
+
+
+/* =====================================================
+   MOBILE
+===================================================== */
+
+@media (max-width: 700px) {
+
+  .hero {
+    min-height: 90vh;
+
+    padding: 110px 25px 70px;
+
+    background:
+      linear-gradient(
+        90deg,
+        rgba(21, 19, 17, 0.96),
+        rgba(21, 19, 17, 0.70)
+      ),
+      url("https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=1600&q=90")
+      center / cover no-repeat;
+  }
+
+  .hero h1 {
+    font-size: clamp(58px, 17vw, 82px);
+    letter-spacing: -3px;
+  }
+
+  .hero-description {
+    margin-top: 30px;
+    font-size: 12px;
+  }
+
+  .hero-actions {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .primary-btn,
+  .secondary-btn {
+    width: 100%;
+  }
+
+
+  /* INTRO */
+
+  .home-intro {
+    padding: 90px 25px;
+
+    grid-template-columns: 1fr;
+
+    gap: 30px;
+  }
+
+  .home-intro-content h2 {
+    font-size: 55px;
+  }
+
+  .home-intro-content p {
+    margin-top: 28px;
+    font-size: 13px;
+  }
+
+
+  /* SECTION HEADINGS */
+
+  .section-top {
+    display: block;
+  }
+
+  .section-top .text-link {
+    margin-top: 25px;
+  }
+
+  .section-top h2,
+  .home-cta h2 {
+    font-size: 55px;
+  }
+
+
+  /* FEATURED */
+
+  .featured-section {
+    padding: 90px 25px;
+  }
+
+  .featured-grid {
+    grid-template-columns: 1fr;
+
+    margin-top: 50px;
+
+    gap: 45px;
+  }
+
+  .featured-card:last-child {
+    grid-column: auto;
+  }
+
+  .featured-image {
+    height: 430px;
+  }
+
+
+  /* SERVICES */
+
+  .home-services {
+    padding: 90px 25px;
+  }
+
+  .home-services-list {
+    margin-top: 45px;
+  }
+
+  .home-service-row {
+    min-height: 90px;
+
+    padding: 0 10px;
+
+    grid-template-columns: 45px 1fr 25px;
+  }
+
+  .home-service-row:hover {
+    padding-left: 15px;
+  }
+
+  .home-service-row h3 {
+    font-size: 24px;
+  }
+
+
+  /* CTA */
+
+  .home-cta {
+    padding: 110px 25px;
+  }
+
+}
+
+
+/* =====================================================
+   SMALL MOBILE
+===================================================== */
+
+@media (max-width: 420px) {
+
+  .hero {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  .hero h1 {
+    font-size: 55px;
+  }
+
+  .featured-section,
+  .home-services {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  .featured-image {
+    height: 380px;
+  }
+
+  .section-top h2,
+  .home-intro-content h2,
+  .home-cta h2 {
+    font-size: 48px;
+  }
+
+}

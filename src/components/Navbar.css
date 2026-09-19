@@ -1,0 +1,205 @@
+.site-navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 90px;
+  padding: 0 6%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #151311;
+  border-bottom: 1px solid rgba(243, 238, 229, 0.15);
+  z-index: 99999;
+}
+
+.site-logo {
+  display: flex;
+  flex-direction: column;
+  text-decoration: none;
+  line-height: 1;
+}
+
+.site-logo span {
+  color: #aaa39a;
+  font-family: "Manrope", sans-serif;
+  font-size: 11px;
+  letter-spacing: 2px;
+}
+
+.site-logo strong {
+  color: #f3eee5;
+  font-family: "Cormorant Garamond", serif;
+  font-size: 25px;
+  font-weight: 600;
+  letter-spacing: 2px;
+}
+
+.site-nav {
+  display: flex;
+  align-items: center;
+  gap: 35px;
+}
+
+.site-nav a {
+  color: #f3eee5;
+  text-decoration: none;
+  font-family: "Manrope", sans-serif;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  transition: 0.3s ease;
+}
+
+.site-nav a:hover {
+  color: #d6b98c;
+}
+
+.site-book-btn {
+  padding: 14px 22px;
+  background: #f3eee5;
+  color: #171411;
+  text-decoration: none;
+  font-family: "Manrope", sans-serif;
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  transition: 0.3s ease;
+}
+
+.site-book-btn:hover {
+  background: #d6b98c;
+}
+
+/* =================================
+   MOBILE MENU
+================================= */
+
+.mobile-menu-btn {
+  display: none;
+  width: 42px;
+  height: 42px;
+  padding: 8px;
+  background: transparent;
+  border: 1px solid rgba(243, 238, 229, 0.25);
+  cursor: pointer;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  z-index: 100001;
+}
+
+.mobile-menu-btn span {
+  display: block;
+  width: 20px;
+  height: 1px;
+  background: #f3eee5;
+  transition: 0.3s ease;
+}
+
+/* HAMBURGER → X */
+
+.mobile-menu-btn.active span:nth-child(1) {
+  transform: translateY(6px) rotate(45deg);
+}
+
+.mobile-menu-btn.active span:nth-child(2) {
+  opacity: 0;
+}
+
+.mobile-menu-btn.active span:nth-child(3) {
+  transform: translateY(-6px) rotate(-45deg);
+}
+
+/* MOBILE NAV */
+
+.mobile-nav {
+  display: none;
+}
+
+/* =================================
+   RESPONSIVE
+================================= */
+
+@media (max-width: 900px) {
+
+  .site-navbar {
+    height: 75px;
+    padding: 0 5%;
+  }
+
+  .site-nav,
+  .site-book-btn {
+    display: none;
+  }
+
+  .mobile-menu-btn {
+    display: flex;
+  }
+
+  .mobile-nav {
+    position: absolute;
+    top: 75px;
+    left: 0;
+    right: 0;
+
+    display: flex;
+    flex-direction: column;
+
+    background: #151311;
+    border-bottom: 1px solid rgba(243, 238, 229, 0.15);
+
+    padding: 10px 5% 25px;
+
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-10px);
+
+    transition:
+      opacity 0.25s ease,
+      transform 0.25s ease,
+      visibility 0.25s ease;
+  }
+
+  .mobile-nav.open {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+  }
+
+  .mobile-nav a {
+    padding: 17px 5px;
+    color: #f3eee5;
+    border-bottom: 1px solid rgba(243, 238, 229, 0.1);
+
+    text-decoration: none;
+
+    font-family: "Manrope", sans-serif;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+
+    transition: 0.3s ease;
+  }
+
+  .mobile-nav a:hover {
+    color: #d6b98c;
+  }
+
+  .mobile-nav .mobile-book-btn {
+    margin-top: 15px;
+    padding: 15px 20px;
+
+    background: #f3eee5;
+    border: none;
+
+    color: #171411;
+    text-align: center;
+  }
+
+  .mobile-nav .mobile-book-btn:hover {
+    color: #171411;
+    background: #d6b98c;
+  }
+}
